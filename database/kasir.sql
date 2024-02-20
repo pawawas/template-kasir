@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 19 Feb 2024 pada 14.53
+-- Waktu pembuatan: 20 Feb 2024 pada 15.09
 -- Versi server: 10.4.25-MariaDB
 -- Versi PHP: 8.1.10
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `kasir_niken`
+-- Database: `kasir`
 --
 
 -- --------------------------------------------------------
@@ -54,13 +54,27 @@ INSERT INTO `detailpenjualan` (`detail_id`, `penjualan_id`, `produk_id`, `jumlah
 (23, 9, 3, 1, '202020.00'),
 (24, 10, 3, 1, '202020.00'),
 (25, 11, 1, 10, '40000.00'),
-(26, 12, 1, 1, '4000.00'),
-(27, 13, 1, 6, '24000.00'),
-(28, 14, 3, 2, '404040.00'),
-(29, 15, 1, 2, '8000.00'),
-(30, 16, 1, 3, '12000.00'),
-(31, 17, 1, 3, '12000.00'),
-(32, 18, 1, 3, '12000.00');
+(26, 12, 3, 3, '606060.00'),
+(27, 13, 1, 1, '4000.00'),
+(28, 13, 3, 3, '606060.00'),
+(29, 14, 1, 1, '4000.00'),
+(30, 15, 1, 1, '4000.00'),
+(31, 16, 1, 1, '4000.00'),
+(32, 17, 1, 1, '4000.00'),
+(33, 18, 1, 2, '1992.00'),
+(34, 19, 1, 2, '9992.00'),
+(35, 20, 1, 2, '9992.00'),
+(36, 21, 1, 2, '9992.00'),
+(43, 28, 3, 10, '2020200.00'),
+(44, 30, 1, 1, '4000.00'),
+(45, 31, 3, 1, '202020.00'),
+(46, 32, 1, 1, '4000.00'),
+(47, 33, 3, 10, '2020200.00'),
+(48, 34, 6, 2, '40000.00'),
+(49, 34, 5, 1, '25000.00'),
+(50, 35, 6, 5, '100000.00'),
+(51, 36, 5, 2, '50000.00'),
+(52, 42, 5, 1, '12000.00');
 
 -- --------------------------------------------------------
 
@@ -80,10 +94,8 @@ CREATE TABLE `pelanggan` (
 --
 
 INSERT INTO `pelanggan` (`pelanggan_id`, `nama_pelanggan`, `alamat`, `nomor_telepon`) VALUES
-(3, 'Niken aurell', 'cangggu', '1'),
-(6, 'eiei', 'eey', '37373'),
-(7, 'zild', 'oke', '1'),
-(8, 'ok', '', '');
+(11, 'niken', '78', '088222234560'),
+(12, 'raya', '56', '986756r318879');
 
 -- --------------------------------------------------------
 
@@ -103,25 +115,21 @@ CREATE TABLE `penjualan` (
 --
 
 INSERT INTO `penjualan` (`penjualan_id`, `tanggal_penjualan`, `total_harga`, `pelanggan_id`) VALUES
-(1, '2024-02-15', '3333.00', 1),
-(2, '2024-02-12', '404.00', 6),
-(3, '2024-02-12', '404.00', 6),
-(4, '2024-02-12', '404.00', 6),
-(5, '2024-02-12', '404.00', 7),
-(6, '2024-02-12', '404.00', 7),
-(7, '2024-02-12', '202.00', 3),
-(8, '2024-02-12', '202.00', 3),
-(9, '2024-02-12', '242.00', 3),
-(10, '2024-02-12', '202.00', 3),
-(11, '2024-02-12', '40.00', 3),
-(12, '2024-02-19', '4.00', 3),
-(13, '2024-02-19', '24.00', 3),
-(14, '2024-02-19', '404.00', 3),
-(15, '2024-02-19', '8.00', 3),
-(16, '2024-02-19', '12.00', 3),
-(17, '2024-02-19', '12.00', 3),
-(18, '2024-02-19', '12.00', 8),
-(19, '2024-02-19', '16.00', 3);
+(28, '2024-02-16', '2.00', 3),
+(29, '2024-02-16', '0.00', 3),
+(30, '2024-02-16', '4.00', 3),
+(31, '2024-02-17', '202020.00', 3),
+(32, '2024-02-17', '4000.00', 3),
+(33, '2024-02-18', '2020200.00', 11),
+(34, '2024-02-19', '65.00', 11),
+(35, '2024-02-19', '100.00', 11),
+(36, '2024-02-19', '50.00', 11),
+(37, '2024-02-20', '0.00', 0),
+(38, '2024-02-20', '12.00', 11),
+(39, '2024-02-20', '12.00', 11),
+(40, '2024-02-20', '0.00', 0),
+(41, '2024-02-20', '12.00', 11),
+(42, '2024-02-20', '12.00', 11);
 
 -- --------------------------------------------------------
 
@@ -141,8 +149,14 @@ CREATE TABLE `produk` (
 --
 
 INSERT INTO `produk` (`produk_id`, `nama_produk`, `harga`, `stok`) VALUES
-(1, 'Ess', '4000.00', 3845),
-(3, 'kiko', '202020.00', 10);
+(5, 'espreso', '25000.00', 6),
+(6, 'cappucino', '20000.00', -2),
+(7, 'latte', '18000.00', 15),
+(8, 'ice latte', '20000.00', 25),
+(9, 'macchiato', '22000.00', 7),
+(10, 'lemon splash', '12000.00', 7),
+(11, 'lychee splash', '12000.00', 10),
+(12, 'peach tea ', '10000.00', 8);
 
 -- --------------------------------------------------------
 
@@ -162,10 +176,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `nama`, `password`, `level`) VALUES
-(2, 'petugas', '202cb962ac59075b964b07152d234b70', 'petugas'),
-(4, 'petugas5', '7f1de29e6da19d22b51c68001e7e0e54', 'petugas'),
 (5, 'admin', '202cb962ac59075b964b07152d234b70', 'admin'),
-(6, 'IVALIVUL', '202cb962ac59075b964b07152d234b70', 'petugas');
+(10, 'petugas', '202cb962ac59075b964b07152d234b70', 'petugas');
 
 --
 -- Indexes for dumped tables
@@ -209,31 +221,31 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT untuk tabel `detailpenjualan`
 --
 ALTER TABLE `detailpenjualan`
-  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `detail_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
 
 --
 -- AUTO_INCREMENT untuk tabel `pelanggan`
 --
 ALTER TABLE `pelanggan`
-  MODIFY `pelanggan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `pelanggan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT untuk tabel `penjualan`
 --
 ALTER TABLE `penjualan`
-  MODIFY `penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `penjualan_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
 
 --
 -- AUTO_INCREMENT untuk tabel `produk`
 --
 ALTER TABLE `produk`
-  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
