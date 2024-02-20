@@ -3,7 +3,7 @@
 $myHost  = "localhost";
 $myUser  = "root";
 $myPass  = "";
-$myDbs  = "kasir_niken";
+$myDbs  = "kasir";
 
 $koneksidb = mysqli_connect($myHost, $myUser, $myPass, $myDbs);
 if (!$koneksidb) {
